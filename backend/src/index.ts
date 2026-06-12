@@ -55,6 +55,14 @@ async function start() {
 
   const healthPayload = { status: 'ok', service: 'SaaS Support Desk API' };
 
+  app.get('/', (_req: Request, res: Response) => {
+    res.json({
+      service: 'SaaS Support Desk API',
+      status: 'ok',
+      health: '/api/health',
+    });
+  });
+
   app.get('/health', (_req: Request, res: Response) => {
     res.json(healthPayload);
   });

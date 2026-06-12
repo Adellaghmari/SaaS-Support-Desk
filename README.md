@@ -70,6 +70,8 @@ Runs at `http://localhost:5173`
 
 If `DATABASE_URL` is not set, the backend uses in memory demo data and seeds on start. No PostgreSQL required for a quick local run.
 
+Uptime monitoring can target the backend health endpoint at `/api/health`.
+
 ### Full PostgreSQL mode
 
 ```bash
