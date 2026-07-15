@@ -1,13 +1,23 @@
+import type { ReactNode } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { DEMO_USER } from '../constants/demoUser';
 import './Layout.css';
 
-const navItems = [
+function KnowledgeBaseIcon() {
+  return (
+    <svg className="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    </svg>
+  );
+}
+
+const navItems: { to: string; label: string; icon: ReactNode }[] = [
   { to: '/', label: 'Dashboard', icon: '◫' },
   { to: '/customers', label: 'Customers', icon: '◎' },
   { to: '/tickets', label: 'Tickets', icon: '✉' },
   { to: '/onboarding', label: 'Onboarding', icon: '☑' },
-  { to: '/knowledge-base', label: 'Knowledge Base', icon: '📖' },
+  { to: '/knowledge-base', label: 'Knowledge Base', icon: <KnowledgeBaseIcon /> },
   { to: '/settings', label: 'About Demo', icon: 'ℹ' },
 ];
 
